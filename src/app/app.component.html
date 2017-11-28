@@ -1,0 +1,18 @@
+<div *ngIf="data$ | async as data; else loadGif">
+  <h1>
+    {{title}}
+  </h1>
+  <ng-container *ngIf="navi$ | async as navi; else loadGif">
+    <sc-main [data]="data" [navi]="navi"></sc-main>
+  </ng-container>
+  <sc-footer></sc-footer>
+</div>
+
+
+<ng-template #loadGif>
+  <div class="flexbox">
+    <img [src]="loadImg" alt="">
+  </div>
+</ng-template>
+
+

@@ -1,0 +1,40 @@
+<div class="element">
+  <div class="element-left">
+    <div class="element-bg-img"><img [src]="mainData[0].img" alt="" class="img-responsive"></div>
+    <div class="element-left-bottom">
+      <div class="ele-strip">
+        <ul>
+          <li *ngFor="let nav of navi">
+            <a href="#" (click)="navClick($event, nav.text_en)">{{nav.text_ru}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="village">
+        <h3>Righteous indignation &amp; like</h3>
+        <span class="line"> </span>
+        <div class="activity_box">
+          <div class="scrollbar" id="style-2">
+            <div class="activity-row">
+              <div class="activity-desc">
+                <h5>Resort Address</h5>
+                <p>{{mainData[0].address}}</p>
+                <h6>{{mainData[0].phone | phone}}</h6>
+              </div>
+              <div class="activity-img">
+                <ul>
+                  <li><img src="assets/images/res.jpg" alt=""></li>
+                  <li><img src="assets/images/r1.jpg" alt=""></li>
+                </ul>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="element-right">
+    <sc-weather [data]="mainData[0]?.weather"></sc-weather>
+    <sc-info [data]="mainData[0]?.social_info"></sc-info>
+  </div>
+</div>
